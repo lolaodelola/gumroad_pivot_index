@@ -3,19 +3,19 @@
 // If multiple indicies exsist, return the first.
 
 function pivotIndex(arr) {
-  var leftTotals = []
-  var sum = 0
+  const leftTotals = []
+  let sum = 0
 
   for(let i = 0; i < arr.length; i++){
     sum = sum + arr[i]
     leftTotals.push(sum)
   }
 
-  var total = leftTotals[leftTotals.length-1]
+  const total = leftTotals[leftTotals.length-1]
 
   for(let i = 0; i < arr.length; i++){
-    var rightTotal = total - leftTotals[i]
-    var leftTotal = leftTotals[i] - arr[i]
+    const rightTotal = total - leftTotals[i]
+    const leftTotal = leftTotals[i] - arr[i]
     if(rightTotal === leftTotal){
       return i
     }
